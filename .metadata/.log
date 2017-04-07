@@ -1,0 +1,380 @@
+!SESSION 2017-03-27 16:26:38.233 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-03-27 16:27:08.953
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'U:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.ds 1 0 2017-03-27 16:27:44.729
+!MESSAGE Could not bind a reference of component org.eclipse.fx.core.internal.JUtilLoggerFactory. The reference is: Reference[name = registerHandler, interface = java.util.logging.Handler, policy = dynamic, policy-option = greedy, cardinality = 0..n, target = null, bind = registerHandler, unbind = unregisterHandler, updated = null]
+
+!ENTRY org.eclipse.equinox.ds 1 0 2017-03-27 16:27:47.155
+!MESSAGE Could not bind a reference of component org.eclipse.fx.ide.css.cssext.ui.internal.DefaultCssExtProvider. The reference is: Reference[name = ICSSExtModelProvider, interface = org.eclipse.fx.ide.css.cssext.ICSSExtModelProvider, policy = dynamic, cardinality = 0..n, target = null, bind = bindCssExtensionModelProvider, unbind = unbindCssExtensionModelProvider]
+!SESSION 2017-03-28 13:10:12.223 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.equinox.ds 1 0 2017-03-28 13:10:20.185
+!MESSAGE Could not bind a reference of component org.eclipse.fx.core.internal.JUtilLoggerFactory. The reference is: Reference[name = registerHandler, interface = java.util.logging.Handler, policy = dynamic, policy-option = greedy, cardinality = 0..n, target = null, bind = registerHandler, unbind = unregisterHandler, updated = null]
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-03-28 13:10:21.758
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'U:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.ds 1 0 2017-03-28 13:10:23.424
+!MESSAGE Could not bind a reference of component org.eclipse.fx.ide.css.cssext.ui.internal.DefaultCssExtProvider. The reference is: Reference[name = ICSSExtModelProvider, interface = org.eclipse.fx.ide.css.cssext.ICSSExtModelProvider, policy = dynamic, cardinality = 0..n, target = null, bind = bindCssExtensionModelProvider, unbind = unbindCssExtensionModelProvider]
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-28 14:26:50.119
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-28 14:26:50.135
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-28 14:27:40.129
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-28 14:27:40.144
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-28 14:28:06.607
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-28 14:28:06.607
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-28 14:29:10.124
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-28 14:29:10.126
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-28 14:29:15.964
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-28 14:29:15.964
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-28 14:31:56.443
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-28 14:31:56.458
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-28 14:32:45.508
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-28 14:32:45.508
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-28 14:33:21.831
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-28 14:33:21.831
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-28 14:35:23.955
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-28 14:35:23.955
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-28 14:36:34.727
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-28 14:36:34.727
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-28 14:36:52.148
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-28 14:36:52.148
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-28 14:38:33.884
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-28 14:38:33.884
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-28 14:40:52.523
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-28 14:40:52.523
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+!SESSION 2017-03-28 14:44:42.635 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.equinox.ds 1 0 2017-03-28 14:44:55.390
+!MESSAGE Could not bind a reference of component org.eclipse.fx.core.internal.JUtilLoggerFactory. The reference is: Reference[name = registerHandler, interface = java.util.logging.Handler, policy = dynamic, policy-option = greedy, cardinality = 0..n, target = null, bind = registerHandler, unbind = unregisterHandler, updated = null]
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-03-28 14:44:56.736
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'U:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.ds 1 0 2017-03-28 14:45:03.887
+!MESSAGE Could not bind a reference of component org.eclipse.fx.ide.css.cssext.ui.internal.DefaultCssExtProvider. The reference is: Reference[name = ICSSExtModelProvider, interface = org.eclipse.fx.ide.css.cssext.ICSSExtModelProvider, policy = dynamic, cardinality = 0..n, target = null, bind = bindCssExtensionModelProvider, unbind = unbindCssExtensionModelProvider]
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-28 14:46:59.984
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-28 14:46:59.984
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-28 14:47:44.908
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-28 14:47:44.908
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+!SESSION 2017-03-31 10:48:30.015 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-03-31 10:48:39.178
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'U:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.ds 1 0 2017-03-31 10:48:39.240
+!MESSAGE Could not bind a reference of component org.eclipse.fx.core.internal.JUtilLoggerFactory. The reference is: Reference[name = registerHandler, interface = java.util.logging.Handler, policy = dynamic, policy-option = greedy, cardinality = 0..n, target = null, bind = registerHandler, unbind = unregisterHandler, updated = null]
+
+!ENTRY org.eclipse.equinox.ds 1 0 2017-03-31 10:48:42.605
+!MESSAGE Could not bind a reference of component org.eclipse.fx.ide.css.cssext.ui.internal.DefaultCssExtProvider. The reference is: Reference[name = ICSSExtModelProvider, interface = org.eclipse.fx.ide.css.cssext.ICSSExtModelProvider, policy = dynamic, cardinality = 0..n, target = null, bind = bindCssExtensionModelProvider, unbind = unbindCssExtensionModelProvider]
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-31 10:48:58.480
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-31 10:48:58.480
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-31 10:52:01.087
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-31 10:52:21.089
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketTimeoutException: Accept timed out
+	at java.net.DualStackPlainSocketImpl.waitForNewConnection(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-31 11:00:21.642
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-31 11:00:21.642
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.ant.launching 4 120 2017-03-31 11:02:40.252
+!MESSAGE Error logged from Ant UI: 
+!STACK 0
+java.net.SocketException: Socket operation on nonsocket: configureBlocking
+	at java.net.DualStackPlainSocketImpl.configureBlocking(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.accept(Unknown Source)
+	at java.net.PlainSocketImpl.accept(Unknown Source)
+	at java.net.ServerSocket.implAccept(Unknown Source)
+	at java.net.ServerSocket.accept(Unknown Source)
+	at org.eclipse.ant.internal.launching.launchConfigurations.RemoteAntBuildListener$ServerConnection.run(RemoteAntBuildListener.java:89)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-03-31 11:02:40.252
+!MESSAGE The archive: C:/Program%20Files/Java/jdk1.8.0_112/lib/tools.jar which is referenced by the classpath, does not exist.
+!SESSION 2017-04-07 11:56:39.841 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-04-07 11:56:48.789
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'U:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.ds 1 0 2017-04-07 11:56:48.858
+!MESSAGE Could not bind a reference of component org.eclipse.fx.core.internal.JUtilLoggerFactory. The reference is: Reference[name = registerHandler, interface = java.util.logging.Handler, policy = dynamic, policy-option = greedy, cardinality = 0..n, target = null, bind = registerHandler, unbind = unregisterHandler, updated = null]
+
+!ENTRY org.eclipse.equinox.ds 1 0 2017-04-07 11:56:52.072
+!MESSAGE Could not bind a reference of component org.eclipse.fx.ide.css.cssext.ui.internal.DefaultCssExtProvider. The reference is: Reference[name = ICSSExtModelProvider, interface = org.eclipse.fx.ide.css.cssext.ICSSExtModelProvider, policy = dynamic, cardinality = 0..n, target = null, bind = bindCssExtensionModelProvider, unbind = unbindCssExtensionModelProvider]
