@@ -29,7 +29,7 @@ public class JavaDB {
 	            // polecenie SQL tworz¹ce tablicê
 	            String tabelaSQL = "CREATE TABLE " + tabela
 	                    + " (ID INT PRIMARY KEY     NOT NULL,"
-	                    + " DATA         DATA    NOT NULL, "
+	                    + " DATA         TEXT    NOT NULL, "
 	                    + " TOWAR        TEXT     NOT NULL, "
 	                    + " ILOSCZAM             INT, "
 	                    + " PO              INT, "
@@ -90,15 +90,18 @@ public class JavaDB {
             polaczenie = DriverManager.getConnection("jdbc:sqlite:" + baza + ".db");
 
             stat = polaczenie.createStatement();
-            String dodajSQL = "INSERT INTO " + baza + " (ID, RODZAJ, GATUNEK, N2, X, UWAGI) "
+            String dodajSQL = "INSERT INTO " + baza + " (ID, DATA, TOWAR, ILOSCZAM, PO, ILOSCODEB,MPK,ODBIORCA,STATUS) "
                     + "VALUES ("
                     + takson.getId() + ","
-                    + "'" + takson.getRodzaj() + "',"
-                    + "'" + takson.getGatunek() + "',"
-                    + takson.getN2() + ","
-                    + takson.getX() + ","
-                    + "'" + takson.getUwagi() + "'"
-                    + "  );";
+                    + "'" + takson.getData() + "',"
+                    + "'" + takson.getTowar() + "',"
+                    + takson.getIlosczam() + ",'"
+                    + takson.getpO() + "',"
+                    + takson.getIloscodeb() + ","
+                    + takson.getMpk()+",'"
+                    +takson.getOdbiorca()+"','"
+                    +takson.getStatus()
+                    + "'  );";
             stat.executeUpdate(dodajSQL);
             stat.close();
             polaczenie.close();

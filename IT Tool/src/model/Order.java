@@ -13,6 +13,19 @@ public class Order {
 	String odbiorca;
 	String status;
 
+	public Order(int id, LocalDate data, String towar, int ilosczam, String pO, int iloscodeb, int mpk, String odbiorca,
+			String status) {
+
+		this.id = id;
+		this.data = data;
+		Towar = towar;
+		this.ilosczam = ilosczam;
+		this.pO = pO;
+		this.iloscodeb = iloscodeb;
+		this.mpk = mpk;
+		this.odbiorca = odbiorca;
+		this.status = status;
+	}
 	public LocalDate getData() {
 		return data;
 	}
@@ -61,9 +74,9 @@ public class Order {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getId() {
+	public int getId() {
 		// TODO Auto-generated method stub
-		return null;
+		return id;
 	}
 
 

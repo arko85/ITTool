@@ -2,6 +2,7 @@ package controller;
 
 import java.io.File;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.stage.FileChooser;
 import model.JavaDB;
+import model.Order;
 import model.PraserXML;
 
 public class ToolController implements Initializable {
@@ -40,7 +42,11 @@ public class ToolController implements Initializable {
 		copyAllButton.setOnAction(x->copyAllButton());
 		chPathFileButton.setOnAction(x->choosePath());
 		JavaDB.stworzTabele(JavaDB.polacz("Orders"), "Orders");
-		JavaDB.szukaj("Orders", "id", "pc");
+		//Order ord =new Order(2,LocalDate.now(),"pc2",1,"jgfj",1,12,"vsfa","hbsfja");
+		//System.out.println(ord.getId());
+		//JavaDB.dodajDane(ord, "Orders");
+		JavaDB.szukaj("Orders", "id", "1");
+
 		// TODO Auto-generated method stub
 
 	}
