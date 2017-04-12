@@ -3,6 +3,7 @@ package model;
 import java.time.LocalDate;
 
 public class Order {
+	int id;
 	LocalDate data;
 	String Towar;
 	int ilosczam;
@@ -59,6 +60,10 @@ public class Order {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public String getId() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

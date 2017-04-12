@@ -39,7 +39,8 @@ public class ToolController implements Initializable {
 		genDataButton.setOnAction(x->genDataButton());
 		copyAllButton.setOnAction(x->copyAllButton());
 		chPathFileButton.setOnAction(x->choosePath());
-		JavaDB.polacz("Orders");
+		JavaDB.stworzTabele(JavaDB.polacz("Orders"), "Orders");
+		JavaDB.szukaj("Orders", "id", "pc");
 		// TODO Auto-generated method stub
 
 	}
