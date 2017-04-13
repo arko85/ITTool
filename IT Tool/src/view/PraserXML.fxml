@@ -14,17 +14,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ToolController">
+<TabPane accessibleRole="CHECK_BOX" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ToolController">
   <tabs>
     <Tab text="Praser">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+                  <SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="600.0">
                      <items>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="383.0" prefWidth="175.0">
                            <children>
-                              <VBox focusTraversable="true" prefHeight="369.0" prefWidth="175.0" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <VBox focusTraversable="true" prefHeight="570.0" prefWidth="175.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
                                     <Label text="Path to XML file:">
                                        <VBox.margin>
@@ -72,7 +72,7 @@
                         </AnchorPane>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <TextArea fx:id="dataTextArea" focusTraversable="false" prefHeight="398.0" prefWidth="417.0">
+                              <TextArea fx:id="dataTextArea" focusTraversable="false" prefHeight="570.0" prefWidth="417.0">
                                  <tooltip>
                                     <Tooltip text="Move it :)" />
                                  </tooltip>
@@ -88,16 +88,16 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="377.0" prefWidth="600.0">
                <children>
-                  <TableView prefHeight="371.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView accessibleText="jjjjj" layoutX="34.0" layoutY="42.0" prefHeight="515.0" prefWidth="1133.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="42.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Data" />
-                      <TableColumn prefWidth="75.0" text="Towar" />
-                        <TableColumn prefWidth="75.0" text="Ilosć zam" />
-                        <TableColumn prefWidth="75.0" text="PO" />
-                        <TableColumn prefWidth="75.0" text="Ilość odebr" />
-                        <TableColumn prefWidth="75.0" text="MPK" />
-                        <TableColumn prefWidth="78.0" text="Odbiorca" />
-                        <TableColumn prefWidth="78.0" text="Status" />
+                      <TableColumn editable="false" prefWidth="102.0" sortable="false" text="Data" />
+                      <TableColumn prefWidth="504.0" text="Towar" />
+                        <TableColumn prefWidth="53.0" text="Zamów." />
+                        <TableColumn prefWidth="217.0" text="PO" />
+                        <TableColumn prefWidth="44.0" text="Odebr." />
+                        <TableColumn prefWidth="52.0" text="MPK" />
+                        <TableColumn prefWidth="85.0" text="Odbiorca" />
+                        <TableColumn prefWidth="142.0" text="Status" />
                     </columns>
                   </TableView>
                </children></AnchorPane>
