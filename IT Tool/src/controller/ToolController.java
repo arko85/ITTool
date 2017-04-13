@@ -16,6 +16,7 @@ import javafx.stage.FileChooser;
 import model.JavaDB;
 import model.Order;
 import model.PraserXML;
+import model.Status;
 
 public class ToolController implements Initializable {
 	@FXML
@@ -42,10 +43,10 @@ public class ToolController implements Initializable {
 		copyAllButton.setOnAction(x->copyAllButton());
 		chPathFileButton.setOnAction(x->choosePath());
 		JavaDB.stworzTabele(JavaDB.polacz("Orders"), "Orders");
-		//Order ord =new Order(2,LocalDate.now(),"pc2",1,"jgfj",1,12,"vsfa","hbsfja");
+		Order ord =new Order(3,LocalDate.now(),"pc42",1,"jgf3j",1,12,"vs3fa",Status.COMPLETED);
 		//System.out.println(ord.getId());
-		//JavaDB.dodajDane(ord, "Orders");
-		JavaDB.szukaj("Orders", "id", "1");
+		JavaDB.dodajDane(ord, "Orders");
+		JavaDB.szukaj("Orders", "id", "3");
 
 		// TODO Auto-generated method stub
 

@@ -31,7 +31,7 @@ public class JavaDB {
 	                    + " (ID INT PRIMARY KEY     NOT NULL,"
 	                    + " DATA         TEXT    NOT NULL, "
 	                    + " TOWAR        TEXT     NOT NULL, "
-	                    + " ILOSCZAM             INT, "
+	                    + " ILOSCZAM             INT NOT NULL, "
 	                    + " PO              INT, "
 	                    + " ILOSCODEB    TEXT,"
 	                    + " MPK INT,"

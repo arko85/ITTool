@@ -11,10 +11,10 @@ public class Order {
 	int iloscodeb;
 	int mpk;
 	String odbiorca;
-	String status;
+	Status status;
 
 	public Order(int id, LocalDate data, String towar, int ilosczam, String pO, int iloscodeb, int mpk, String odbiorca,
-			String status) {
+			Status status) {
 
 		this.id = id;
 		this.data = data;
@@ -68,10 +68,10 @@ public class Order {
 	public void setOdbiorca(String odbiorca) {
 		this.odbiorca = odbiorca;
 	}
-	public String getStatus() {
+	public Status getStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 	public int getId() {
