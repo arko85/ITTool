@@ -93,17 +93,17 @@
          <content>
             <VBox alignment="TOP_CENTER">
                <children>
-                  <TableView editable="true" tableMenuButtonVisible="true" VBox.vgrow="SOMETIMES">
+                  <TableView fx:id="tData" editable="true" tableMenuButtonVisible="true" VBox.vgrow="SOMETIMES">
                     <columns>
-                      <TableColumn maxWidth="120.0" minWidth="80.0" prefWidth="-1.0" sortable="false" text="Data" />
+                      <TableColumn fx:id="cData" maxWidth="120.0" minWidth="80.0" prefWidth="-1.0" sortable="false" text="Data" />
 
-                                        <TableColumn maxWidth="700.0" minWidth="450.0" prefWidth="500.0" text="Towar" />
-                        <TableColumn maxWidth="50.0" minWidth="50.0" prefWidth="-1.0" text="Zamów." />
-                        <TableColumn maxWidth="120.0" minWidth="120.0" prefWidth="-1.0" text="PO" />
-                        <TableColumn maxWidth="50.0" minWidth="50.0" prefWidth="-1.0" text="Odebr." />
-                        <TableColumn maxWidth="50.0" minWidth="80.0" prefWidth="-1.0" text="MPK" />
-                        <TableColumn maxWidth="400.0" minWidth="200.0" prefWidth="-1.0" text="Uwagi" />
-                        <TableColumn maxWidth="120.0" minWidth="100.0" prefWidth="-1.0" text="Status" />
+                                        <TableColumn fx:id="cTowar" maxWidth="700.0" minWidth="450.0" prefWidth="500.0" text="Towar" />
+                        <TableColumn fx:id="cZamow" maxWidth="50.0" minWidth="50.0" prefWidth="-1.0" text="Zamów." />
+                        <TableColumn fx:id="cPO" maxWidth="120.0" minWidth="120.0" prefWidth="-1.0" text="PO" />
+                        <TableColumn fx:id="cOdebr" maxWidth="50.0" minWidth="50.0" prefWidth="-1.0" text="Odebr." />
+                        <TableColumn fx:id="cMpk" maxWidth="50.0" minWidth="80.0" prefWidth="-1.0" text="MPK" />
+                        <TableColumn fx:id="cUwagi" maxWidth="400.0" minWidth="200.0" prefWidth="-1.0" text="Uwagi" />
+                        <TableColumn fx:id="cStatus" maxWidth="120.0" minWidth="100.0" prefWidth="-1.0" text="Status" />
 
                   
                   
@@ -125,7 +125,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <DatePicker GridPane.columnIndex="1">
+                        <DatePicker fx:id="pData" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
@@ -145,7 +145,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
                         </Label>
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <TextField fx:id="pTowar" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
@@ -175,22 +175,22 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
                         </Label>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                        <ChoiceBox fx:id="pStatus" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
                         </ChoiceBox>
-                        <TextField GridPane.columnIndex="5">
+                        <TextField fx:id="pUwagi" GridPane.columnIndex="5">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField GridPane.columnIndex="3" GridPane.rowIndex="2">
+                        <TextField fx:id="pMpk" GridPane.columnIndex="3" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField GridPane.columnIndex="3" GridPane.rowIndex="1">
+                        <TextField fx:id="pOdebr" GridPane.columnIndex="3" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
@@ -198,18 +198,18 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                         </TextField>
-                        <TextField GridPane.columnIndex="3">
+                        <TextField fx:id="pPO" GridPane.columnIndex="3">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <TextField fx:id="pZamow" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
                         </TextField>
-                        <Button mnemonicParsing="false" text="Search" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                        <Button mnemonicParsing="false" text="Add" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Button fx:id="bSearch" mnemonicParsing="false" text="Search" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Button fx:id="bAdd" mnemonicParsing="false" text="Add" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                      </children>
                      <opaqueInsets>
                         <Insets />

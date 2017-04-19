@@ -1,10 +1,13 @@
 package model;
-
+//http://stackoverflow.com/questions/18497699/populate-a-tableview-using-database-in-javafx
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class JavaDB {
 	public static Connection polacz(String baza) {
@@ -62,7 +65,9 @@ public class JavaDB {
             System.out.println("Polecenie:\n" + szukajSQL);
 
             while (wynik.next()) {
+            	Order row = FXCollections.observableArrayList();
                 int id = wynik.getInt("id");
+                row.add(wynik.getInt("id"));
                 System.out.println("ID:       " + id);
                 System.out.println("Data:   " + wynik.getString("data"));
                 System.out.println("Towar:  " + wynik.getString("towar"));
