@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.Clipboard;
@@ -34,6 +35,8 @@ public class ToolController implements Initializable {
     @FXML
     private TextArea dataTextArea;
 
+
+
     private File pathFile;
 
 
@@ -43,9 +46,9 @@ public class ToolController implements Initializable {
 		copyAllButton.setOnAction(x->copyAllButton());
 		chPathFileButton.setOnAction(x->choosePath());
 		JavaDB.stworzTabele(JavaDB.polacz("Orders"), "Orders");
-		Order ord =new Order(3,LocalDate.now(),"pc42",1,"jgf3j",1,12,"vs3fa",Status.COMPLETED);
+		//Order ord =new Order(3,LocalDate.now(),"pc42",1,"jgf3j",1,12,"vs3fa",Status.COMPLETED);
 		//System.out.println(ord.getId());
-		JavaDB.dodajDane(ord, "Orders");
+		//JavaDB.dodajDane(ord, "Orders");
 		JavaDB.szukaj("Orders", "id", "3");
 
 		// TODO Auto-generated method stub

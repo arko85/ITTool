@@ -2,6 +2,9 @@ package model;
 
 import java.time.LocalDate;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+
 public class Order {
 	int id;
 	LocalDate data;
@@ -13,8 +16,9 @@ public class Order {
 	String odbiorca;
 	Status status;
 
+
 	public Order(int id, LocalDate data, String towar, int ilosczam, String pO, int iloscodeb, int mpk, String odbiorca,
-			Status status) {
+			Status status, Boolean checked) {
 
 		this.id = id;
 		this.data = data;
@@ -25,7 +29,23 @@ public class Order {
 		this.mpk = mpk;
 		this.odbiorca = odbiorca;
 		this.status = status;
+
+
 	}
+	private SimpleBooleanProperty checked = new SimpleBooleanProperty(false);
+	   // other columns here
+
+	    public SimpleBooleanProperty checkedProperty() {
+	        return this.checked;
+	    }
+
+	    public java.lang.Boolean getChecked() {
+	        return this.checkedProperty().get();
+	    }
+
+	    public void setChecked(final java.lang.Boolean checked) {
+	        this.checkedProperty().set(checked);
+	    }
 	public LocalDate getData() {
 		return data;
 	}
