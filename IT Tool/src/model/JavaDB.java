@@ -50,34 +50,46 @@ public class JavaDB {
 	        }
 	    }
 
-    public static void szukaj(String baza, String pole, String wartosc) {
+    public static ObservableList<Order> szukaj(String baza, String pole, String wartosc) {
         Connection polaczenie = null;
         Statement stat = null;
+        ObservableList<Order> data = null;
+        data=FXCollections.observableArrayList();
         try {
             Class.forName("org.sqlite.JDBC");
             polaczenie = DriverManager.getConnection("jdbc:sqlite:" + baza + ".db");
             stat = polaczenie.createStatement();
             // Polecenie wyszukania
-            String szukajSQL = "SELECT * FROM " + baza
-                    + " WHERE " + pole + "='" + wartosc + "';";
+            String szukajSQL = "SELECT * FROM " + baza+";";
+                   // + " WHERE " + pole + "='" + wartosc + "';";
 
             ResultSet wynik = stat.executeQuery(szukajSQL);
             System.out.println("Polecenie:\n" + szukajSQL);
 
             while (wynik.next()) {
-            	Order row = FXCollections.observableArrayList();
+
+            	Order row =new Order();
                 int id = wynik.getInt("id");
-                row.add(wynik.getInt("id"));
+                row.setId(wynik.getInt("id"));
                 System.out.println("ID:       " + id);
+                row.setData(wynik.getString("data"));
                 System.out.println("Data:   " + wynik.getString("data"));
+                row.setTowar(wynik.getString("towar"));
                 System.out.println("Towar:  " + wynik.getString("towar"));
+                row.setIlosczam(wynik.getInt("ilosczam"));
                 System.out.println("Ilosc zamówionych:"       + wynik.getString("ilosczam"));
+                row.setpO(wynik.getString("po"));
                 System.out.println("PO:        " + wynik.getString("po"));
+                row.setIloscodeb(wynik.getInt("iloscodeb"));
                 System.out.println("Ilosc odebranych:    " + wynik.getString("iloscodeb"));
+                row.setMpk(wynik.getInt("mpk"));
                 System.out.println("MPK:    " + wynik.getString("mpk"));
+                row.setOdbiorca(wynik.getString("odbiorca"));
                 System.out.println("Odbiorca:    " + wynik.getString("odbiorca"));
+                row.setStatus(Status.valueOf(wynik.getString("status")));
                 System.out.println("Status:    " + wynik.getString("status"));
                 System.out.println(" ---------------------- ");
+                data.add(row);
             }
             wynik.close();
             stat.close();
@@ -85,6 +97,7 @@ public class JavaDB {
         } catch (Exception e) {
             System.out.println("Nie mogê wyszukaæ danych " + e.getMessage());
         }
+		return data;
 
     }
     public static void dodajDane(Order takson, String baza) {

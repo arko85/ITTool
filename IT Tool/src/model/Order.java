@@ -1,62 +1,72 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 
 public class Order {
 	int id;
 	LocalDate data;
-	String Towar;
+	String towar;
 	int ilosczam;
 	String pO;
 	int iloscodeb;
 	int mpk;
-	String odbiorca;
+	String uwagi;
 	Status status;
 
 
 	public Order(int id, LocalDate data, String towar, int ilosczam, String pO, int iloscodeb, int mpk, String odbiorca,
-			Status status, Boolean checked) {
+			Status status) {
 
 		this.id = id;
 		this.data = data;
-		Towar = towar;
+		this.towar = towar;
 		this.ilosczam = ilosczam;
 		this.pO = pO;
 		this.iloscodeb = iloscodeb;
 		this.mpk = mpk;
-		this.odbiorca = odbiorca;
+		this.uwagi = odbiorca;
 		this.status = status;
 
 
 	}
-	private SimpleBooleanProperty checked = new SimpleBooleanProperty(false);
-	   // other columns here
-
-	    public SimpleBooleanProperty checkedProperty() {
-	        return this.checked;
-	    }
-
-	    public java.lang.Boolean getChecked() {
-	        return this.checkedProperty().get();
-	    }
-
-	    public void setChecked(final java.lang.Boolean checked) {
-	        this.checkedProperty().set(checked);
-	    }
+	public Order() {
+		// TODO Auto-generated constructor stub
+	}
+//	private SimpleBooleanProperty checked = new SimpleBooleanProperty(false);
+//	   // other columns here
+//
+//	    public SimpleBooleanProperty checkedProperty() {
+//	        return this.checked;
+//	    }
+//
+//	    public java.lang.Boolean getChecked() {
+//	        return this.checkedProperty().get();
+//	    }
+//
+//	    public void setChecked(final java.lang.Boolean checked) {
+//	        this.checkedProperty().set(checked);
+//	    }
 	public LocalDate getData() {
 		return data;
 	}
-	public void setData(LocalDate data) {
-		this.data = data;
+	public void setData(String data) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		formatter = formatter.withLocale( Locale.getDefault() );
+		this.data=LocalDate.parse(data);
 	}
 	public String getTowar() {
-		return Towar;
+
+		return towar;
 	}
 	public void setTowar(String towar) {
-		Towar = towar;
+		this.towar = towar;
 	}
 	public int getIlosczam() {
 		return ilosczam;
@@ -83,10 +93,10 @@ public class Order {
 		this.mpk = mpk;
 	}
 	public String getOdbiorca() {
-		return odbiorca;
+		return uwagi;
 	}
 	public void setOdbiorca(String odbiorca) {
-		this.odbiorca = odbiorca;
+		this.uwagi = odbiorca;
 	}
 	public Status getStatus() {
 		return status;
@@ -98,7 +108,13 @@ public class Order {
 		// TODO Auto-generated method stub
 		return id;
 	}
-
+	public void setId(int id) {
+		this.id = id;
+	}
+	/*public void setChecked(SimpleBooleanProperty checked) {
+		this.checked = checked;
+	}
+*/
 
 
 
