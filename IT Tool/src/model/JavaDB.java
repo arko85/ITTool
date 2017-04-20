@@ -100,7 +100,7 @@ public class JavaDB {
 		return data;
 
     }
-    public static void dodajDane(Order takson, String baza) {
+    public static void dodajDane(Order dane, String baza) {
         Connection polaczenie = null;
         Statement stat = null;
         try {
@@ -110,15 +110,15 @@ public class JavaDB {
             stat = polaczenie.createStatement();
             String dodajSQL = "INSERT INTO " + baza + " (ID, DATA, TOWAR, ILOSCZAM, PO, ILOSCODEB,MPK,ODBIORCA,STATUS) "
                     + "VALUES ("
-                    + takson.getId() + ","
-                    + "'" + takson.getData() + "',"
-                    + "'" + takson.getTowar() + "',"
-                    + takson.getIlosczam() + ",'"
-                    + takson.getpO() + "',"
-                    + takson.getIloscodeb() + ","
-                    + takson.getMpk()+",'"
-                    +takson.getOdbiorca()+"','"
-                    +takson.getStatus()
+                    + dane.getId() + ","
+                    + "'" + dane.getData() + "',"
+                    + "'" + dane.getTowar() + "',"
+                    + dane.getIlosczam() + ",'"
+                    + dane.getpO() + "',"
+                    + dane.getIloscodeb() + ","
+                    + dane.getMpk()+",'"
+                    +dane.getOdbiorca()+"','"
+                    +dane.getStatus()
                     + "'  );";
             stat.executeUpdate(dodajSQL);
             stat.close();

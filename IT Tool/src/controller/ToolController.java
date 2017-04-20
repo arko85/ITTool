@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -86,7 +87,8 @@ public class ToolController implements Initializable {
     private TextField pTowar;
 
     @FXML
-    private ChoiceBox<?> pStatus;
+    private ChoiceBox<Status> pStatus;
+
 
     @FXML
     private TextField pUwagi;
@@ -111,6 +113,8 @@ public class ToolController implements Initializable {
 
 
 	public void initialize(URL location, ResourceBundle resources) {
+		pStatus.getItems().setAll(Status.values());
+		//pStatus.set
 		xmlPathTextField.setText("./Potwierdzenie.xml");
 		genDataButton.setOnAction(x->genDataButton());
 		copyAllButton.setOnAction(x->copyAllButton());
