@@ -12,8 +12,10 @@ import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.Property;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,7 +25,9 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TableView.TableViewSelectionModel;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -157,6 +161,26 @@ public class ToolController implements Initializable {
 		//ObservableList<Order> data = JavaDB.szukaj("Orders", "id", "3");
 		//System.out.print(data.get(2).getId());
 		configTab();
+
+		tData.getSelectionModel().selectedItemProperty().addListener(new ListChangeListener() {
+		    public void changed(ObservableValue observableValue, Object oldValue, Object newValue) {
+		        //Check whether item is selected and set value of selected item to Label
+		        if(tData.getSelectionModel().getSelectedItem() != null)
+		        {
+		           /*TableViewSelectionModel selectionModel = tData.getSelectionModel();
+		           ObservableList selectedCells = selectionModel.getSelectedCells();
+		           TablePosition tablePosition = (TablePosition) selectedCells.get(0);
+		           Object val = tablePosition.getTableColumn().getCellData(newValue);*/
+		           System.out.println("Selected Value" + val);
+		         }
+		         }
+
+			@Override
+			public void onChanged(Change c) {
+				// TODO Auto-generated method stub
+
+			}
+		     });
 
 
 

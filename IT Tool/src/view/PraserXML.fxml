@@ -95,7 +95,7 @@
                <children>
                   <TableView fx:id="tData" editable="true" tableMenuButtonVisible="true" VBox.vgrow="SOMETIMES">
                     <columns>
-                        <TableColumn fx:id="cId" maxWidth="80.0" minWidth="50.0" prefWidth="-1.0" text="ID" />
+                        <TableColumn fx:id="cId" maxWidth="120.0" minWidth="100.0" prefWidth="-1.0" text="ID" />
                       	<TableColumn fx:id="cData" maxWidth="120.0" minWidth="80.0" prefWidth="-1.0" text="Data" />
                         <TableColumn fx:id="cTowar" maxWidth="700.0" minWidth="450.0" prefWidth="500.0" text="Towar" />
                         <TableColumn fx:id="cZamow" maxWidth="50.0" minWidth="50.0" prefWidth="-1.0" text="Zamów." />
