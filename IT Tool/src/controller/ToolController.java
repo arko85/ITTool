@@ -3,8 +3,13 @@ package controller;
 import java.io.File;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
+import javafx.beans.property.Property;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ObservableValue;
@@ -54,7 +59,7 @@ public class ToolController implements Initializable {
     private TableView<Order> tData;
 
     @FXML
-    private TableColumn<Order,Integer> cId;
+    private TableColumn<Order,String> cId;
 
     @FXML
     private TableColumn<Order,LocalDate> cData;
@@ -113,23 +118,68 @@ public class ToolController implements Initializable {
 
 
 	public void initialize(URL location, ResourceBundle resources) {
+
+		BooleanBinding bb = new BooleanBinding() {
+		    {
+		        super.bind(pTowar.textProperty(),
+		                pZamow.textProperty(),
+		                pOdebr.textProperty(),
+		                pPO.textProperty(),
+		                pMpk.textProperty(),
+		                pUwagi.textProperty());
+		    }
+
+		    @Override
+		    protected boolean computeValue() {
+		        return (pTowar.getText().isEmpty()
+		                || pZamow.getText().isEmpty()
+		                || pOdebr.getText().isEmpty()
+		                || pPO.getText().isEmpty()
+		                || pMpk.getText().isEmpty()
+		                || pUwagi.getText().isEmpty());
+		    }
+		};
 		pStatus.getItems().setAll(Status.values());
 		//pStatus.set
 		xmlPathTextField.setText("./Potwierdzenie.xml");
+		bAdd.disableProperty().bind(bb);
 		genDataButton.setOnAction(x->genDataButton());
 		copyAllButton.setOnAction(x->copyAllButton());
 		chPathFileButton.setOnAction(x->choosePath());
+		bAdd.setOnAction(x->addData());
+		bSearch.setOnAction(x->serchData());
+		pData.setValue(LocalDate.now());
+		pStatus.setValue(Status.PROCESSING);
 		JavaDB.stworzTabele(JavaDB.polacz("Orders"), "Orders");
-		//Order ord =new Order(2,LocalDate.now(),"pc442",1,"tes5t4",1,12,"3test35",Status.COMPLETED);
-		System.out.println(LocalDate.now());
+		//Order ord =new Order(LocalDate.now(),"pc442",1,"tes5t4",1,12,"3test35",Status.COMPLETED);
+
 		//JavaDB.dodajDane(ord, "Orders");
-		ObservableList<Order> data = JavaDB.szukaj("Orders", "id", "3");
-		System.out.print(data.get(2).getId());
+		//ObservableList<Order> data = JavaDB.szukaj("Orders", "id", "3");
+		//System.out.print(data.get(2).getId());
 		configTab();
 
 
-		tData.setItems(data);
 
+		// TODO Auto-generated method stub
+
+	}
+
+
+
+	private void serchData() {
+		// TODO Auto-generated method stub
+		ObservableList<Order> data = JavaDB.szukaj("Orders", "id", "3");
+		tData.setItems(data);
+	}
+
+
+
+	private void addData() {
+	//System.out.println(Long.parseLong(LocalDateTime.now().format(DateTimeFormatter.ofPattern("YYMMddHmsS"))));
+
+		Order ord =new Order(LocalDateTime.now().format(DateTimeFormatter.ofPattern("YYMMddHmsS")),pData.getValue(),pTowar.getText(),Integer.parseInt(pZamow.getText()),pPO.getText(),Integer.parseInt(pOdebr.getText()),Integer.parseInt(pMpk.getText()),pUwagi.getText(),pStatus.getValue());
+
+		JavaDB.dodajDane(ord, "Orders");
 		// TODO Auto-generated method stub
 
 	}
@@ -173,8 +223,8 @@ public class ToolController implements Initializable {
 	}
 
 	private void configTab(){
-		cId.setCellValueFactory(new Callback<CellDataFeatures<Order, Integer>, ObservableValue<Integer>>() {
-		     public ObservableValue<Integer> call(CellDataFeatures<Order, Integer> p) {
+		cId.setCellValueFactory(new Callback<CellDataFeatures<Order, String>, ObservableValue<String>>() {
+		     public ObservableValue<String> call(CellDataFeatures<Order, String> p) {
 
 		         return new ReadOnlyObjectWrapper<>(p.getValue().getId());
 		     }

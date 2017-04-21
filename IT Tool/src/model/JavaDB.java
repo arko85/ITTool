@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -69,8 +71,8 @@ public class JavaDB {
             while (wynik.next()) {
 
             	Order row =new Order();
-                int id = wynik.getInt("id");
-                row.setId(wynik.getInt("id"));
+                String id = wynik.getString("id");
+                row.setId(wynik.getString("id"));
                 System.out.println("ID:       " + id);
                 row.setData(wynik.getString("data"));
                 System.out.println("Data:   " + wynik.getString("data"));
@@ -109,8 +111,8 @@ public class JavaDB {
 
             stat = polaczenie.createStatement();
             String dodajSQL = "INSERT INTO " + baza + " (ID, DATA, TOWAR, ILOSCZAM, PO, ILOSCODEB,MPK,ODBIORCA,STATUS) "
-                    + "VALUES ("
-                    + dane.getId() + ","
+                    + "VALUES ('"
+                    + dane.getId() + "',"
                     + "'" + dane.getData() + "',"
                     + "'" + dane.getTowar() + "',"
                     + dane.getIlosczam() + ",'"
@@ -120,6 +122,7 @@ public class JavaDB {
                     +dane.getOdbiorca()+"','"
                     +dane.getStatus()
                     + "'  );";
+            System.out.println(dodajSQL);
             stat.executeUpdate(dodajSQL);
             stat.close();
             polaczenie.close();

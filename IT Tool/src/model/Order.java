@@ -1,13 +1,14 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 
 
 public class Order {
-	int id;
+	String id;
 	LocalDate data;
 	String towar;
 	int ilosczam;
@@ -18,10 +19,10 @@ public class Order {
 	Status status;
 
 
-	public Order(int id, LocalDate data, String towar, int ilosczam, String pO, int iloscodeb, int mpk, String odbiorca,
+	public Order(String id, LocalDate data, String towar, int ilosczam, String pO, int iloscodeb, int mpk, String odbiorca,
 			Status status) {
 
-		this.id = id;
+		this.id=id;
 		this.data = data;
 		this.towar = towar;
 		this.ilosczam = ilosczam;
@@ -54,9 +55,9 @@ public class Order {
 		return data;
 	}
 	public void setData(String data) {
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		formatter = formatter.withLocale( Locale.getDefault() );
+
 		this.data=LocalDate.parse(data);
+
 	}
 	public String getTowar() {
 
@@ -101,12 +102,13 @@ public class Order {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-	public int getId() {
+	public String getId() {
 		// TODO Auto-generated method stub
+
 		return id;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setId(String id) {
+		this.id =id;
 	}
 	/*public void setChecked(SimpleBooleanProperty checked) {
 		this.checked = checked;
