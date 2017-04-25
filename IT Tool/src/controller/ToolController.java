@@ -16,6 +16,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
+import javafx.collections.MapChangeListener.Change;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -88,6 +89,7 @@ public class ToolController implements Initializable {
 
     @FXML
     private TableColumn<Order, Status> cStatus;
+    private String pid;
 
     @FXML
     private DatePicker pData;
@@ -119,6 +121,10 @@ public class ToolController implements Initializable {
 
     @FXML
     private Button bAdd;
+
+    @FXML
+    private Button bModify;
+
 
 
 	public void initialize(URL location, ResourceBundle resources) {
@@ -152,6 +158,7 @@ public class ToolController implements Initializable {
 		chPathFileButton.setOnAction(x->choosePath());
 		bAdd.setOnAction(x->addData());
 		bSearch.setOnAction(x->serchData());
+		//bModify.setOnAction(x->updateData());
 		pData.setValue(LocalDate.now());
 		pStatus.setValue(Status.PROCESSING);
 		JavaDB.stworzTabele(JavaDB.polacz("Orders"), "Orders");
@@ -162,23 +169,27 @@ public class ToolController implements Initializable {
 		//System.out.print(data.get(2).getId());
 		configTab();
 
-		tData.getSelectionModel().selectedItemProperty().addListener(new ListChangeListener() {
-		    public void changed(ObservableValue observableValue, Object oldValue, Object newValue) {
+		tData.getSelectionModel().getSelectedItems().addListener(new ListChangeListener<Order>() {
+		  /*  public void changed(ObservableValue observableValue, Object oldValue, Object newValue) {
 		        //Check whether item is selected and set value of selected item to Label
 		        if(tData.getSelectionModel().getSelectedItem() != null)
 		        {
-		           /*TableViewSelectionModel selectionModel = tData.getSelectionModel();
+		           TableViewSelectionModel selectionModel = tData.getSelectionModel();
 		           ObservableList selectedCells = selectionModel.getSelectedCells();
 		           TablePosition tablePosition = (TablePosition) selectedCells.get(0);
-		           Object val = tablePosition.getTableColumn().getCellData(newValue);*/
+		           Object val = tablePosition.getTableColumn().getCellData(newValue);
 		           System.out.println("Selected Value" + val);
-		         }
-		         }
+		         }S
+		         }*/
+
+
 
 			@Override
-			public void onChanged(Change c) {
+			public void onChanged(javafx.collections.ListChangeListener.Change<? extends Order> c) {
 				// TODO Auto-generated method stub
-
+				System.out.println("Selected Value" + tData.getSelectionModel().getSelectedItem().getId());
+				fillTextField(tData.getSelectionModel().getSelectedItem());
+				c.reset();
 			}
 		     });
 
@@ -207,7 +218,27 @@ public class ToolController implements Initializable {
 		// TODO Auto-generated method stub
 
 	}
+	private void fillTextField(Order p){
+		pid =p.getId();
 
+		pData.setValue(p.getData());
+		pTowar.setText(p.getTowar());
+		pZamow.setText(Integer.toString(p.getIlosczam()));
+		pPO.setText(p.getpO());
+		pOdebr.setText(Integer.toString(p.getIloscodeb()));
+		pMpk.setText(Integer.toString(p.getMpk()));
+		pUwagi.setText(p.getUwagi());
+		pStatus.setValue(p.getStatus());
+
+
+
+
+	}
+	private void updateData(){
+		Order ord =new Order(pid,pData.getValue(),pTowar.getText(),Integer.parseInt(pZamow.getText()),pPO.getText(),Integer.parseInt(pOdebr.getText()),Integer.parseInt(pMpk.getText()),pUwagi.getText(),pStatus.getValue());
+		JavaDB.updateDane(ord, "Orders");
+
+	}
 
 
 	private void choosePath() {
@@ -292,7 +323,7 @@ public class ToolController implements Initializable {
 		cUwagi.setCellValueFactory(new Callback<CellDataFeatures<Order, String>, ObservableValue<String>>() {
 		     public ObservableValue<String> call(CellDataFeatures<Order, String> p) {
 
-		         return new ReadOnlyObjectWrapper<>(p.getValue().getOdbiorca());
+		         return new ReadOnlyObjectWrapper<>(p.getValue().getUwagi());
 		     }
 		  });
 		cStatus.setCellValueFactory(new Callback<CellDataFeatures<Order, Status>, ObservableValue<Status>>() {

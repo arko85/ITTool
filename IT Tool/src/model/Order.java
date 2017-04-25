@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
+import javafx.collections.ListChangeListener;
+
 
 
 public class Order {
@@ -90,7 +92,7 @@ public class Order {
 	public void setMpk(int mpk) {
 		this.mpk = mpk;
 	}
-	public String getOdbiorca() {
+	public String getUwagi() {
 		return uwagi;
 	}
 	public void setOdbiorca(String odbiorca) {

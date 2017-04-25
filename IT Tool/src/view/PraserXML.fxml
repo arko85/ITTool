@@ -210,6 +210,7 @@
                         </TextField>
                         <Button fx:id="bSearch" mnemonicParsing="false" text="Search" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                         <Button fx:id="bAdd" mnemonicParsing="false" text="Add" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Button fx:id="bModify" layoutX="1167.0" layoutY="48.0" mnemonicParsing="false" text="Modify" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                      </children>
                      <opaqueInsets>
                         <Insets />

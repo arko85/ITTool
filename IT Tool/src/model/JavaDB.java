@@ -110,8 +110,8 @@ public class JavaDB {
             polaczenie = DriverManager.getConnection("jdbc:sqlite:" + baza + ".db");
 
             stat = polaczenie.createStatement();
-            String dodajSQL = "INSERT INTO " + baza + " (ID, DATA, TOWAR, ILOSCZAM, PO, ILOSCODEB,MPK,ODBIORCA,STATUS) "
-                    + "VALUES ('"
+            String dodajSQL = "INSERT INTO " + baza + " (ID, DATA, TOWAR, ILOSCZAM, PO, ILOSCODEB,MPK,ODBIORCA,STATUS ) "
+            		+ "VALUES ('"
                     + dane.getId() + "',"
                     + "'" + dane.getData() + "',"
                     + "'" + dane.getTowar() + "',"
@@ -119,9 +119,11 @@ public class JavaDB {
                     + dane.getpO() + "',"
                     + dane.getIloscodeb() + ","
                     + dane.getMpk()+",'"
-                    +dane.getOdbiorca()+"','"
+                    +dane.getUwagi()+"','"
                     +dane.getStatus()
                     + "'  );";
+
+
             System.out.println(dodajSQL);
             stat.executeUpdate(dodajSQL);
             stat.close();
@@ -133,4 +135,34 @@ public class JavaDB {
         }
 
     }
+    public static void updateDane(Order dane, String baza) {
+        Connection polaczenie = null;
+        Statement stat = null;
+        try {
+            Class.forName("org.sqlite.JDBC");
+            polaczenie = DriverManager.getConnection("jdbc:sqlite:" + baza + ".db");
+
+            stat = polaczenie.createStatement();
+            String dodajSQL = "UPDATE " + baza + " SET "
+            		+ "DATA='" + dane.getData() + "',"
+                    + "TOWAR='" + dane.getTowar() + "',"
+                    + "ILOSCZAM="+dane.getIlosczam() + ","
+                    + "PO='" +dane.getpO() + "',"
+                    + "ILOSCODEB="+dane.getIloscodeb() + ","
+                    + "MPK="+dane.getMpk()+","
+                    +"ODBIORCA='"+dane.getUwagi()+"',"
+                    +"STATUS='"+dane.getStatus()
+                    + "' WHERE ID='"+ dane.id+"';";
+            //System.out.println(dodajSQL);
+            stat.executeUpdate(dodajSQL);
+            stat.close();
+            polaczenie.close();
+            // Komunikat i wydrukowanie koñcowej formy polecenia SQL
+            System.out.println("Polecenie: \n" + dodajSQL + "\n wykonane.");
+        } catch (Exception e) {
+            System.out.println("Nie mogê dodaæ danych " + e.getMessage());
+        }
+
+    }
+
 }
