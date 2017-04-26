@@ -109,15 +109,16 @@
 
                                       </columns>
                   </TableView>
-                  <GridPane minHeight="100.0" prefHeight="100.0" prefWidth="600.0">
+                  <GridPane accessibleRole="NODE" minHeight="100.0" prefHeight="100.0" prefWidth="600.0">
                     <columnConstraints>
                       <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
                         <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
                         <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="404.0" minWidth="10.0" prefWidth="342.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="358.0" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -135,7 +136,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="Towar" GridPane.rowIndex="1">
+                        <Label text="Towar" GridPane.columnIndex="4" GridPane.rowSpan="2">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
@@ -145,11 +146,6 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
                         </Label>
-                        <TextField fx:id="pTowar" promptText="towar" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <GridPane.margin>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </GridPane.margin>
-                        </TextField>
                         <Label text="PO" GridPane.columnIndex="2">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -165,22 +161,22 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="Uwagi" GridPane.columnIndex="4">
+                        <Label text="Uwagi" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="Status" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                        <Label text="Status" GridPane.columnIndex="4" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
                         </Label>
-                        <ChoiceBox fx:id="pStatus" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                        <ChoiceBox fx:id="pStatus" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
                         </ChoiceBox>
-                        <TextField fx:id="pUwagi" promptText="&gt;&gt;" GridPane.columnIndex="5">
+                        <TextField fx:id="pUwagi" prefHeight="52.0" prefWidth="357.0" promptText="&gt;&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
@@ -210,7 +206,13 @@
                         </TextField>
                         <Button fx:id="bSearch" mnemonicParsing="false" text="Search" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                         <Button fx:id="bAdd" mnemonicParsing="false" text="Add" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Button fx:id="bClear" mnemonicParsing="false" text="Clear" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                         <Button fx:id="bModify" layoutX="1167.0" layoutY="48.0" mnemonicParsing="false" text="Modify" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <TextArea fx:id="pTowar" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="5" GridPane.rowSpan="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </TextArea>
                      </children>
                      <opaqueInsets>
                         <Insets />

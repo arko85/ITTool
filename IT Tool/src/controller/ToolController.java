@@ -89,13 +89,14 @@ public class ToolController implements Initializable {
 
     @FXML
     private TableColumn<Order, Status> cStatus;
+
     private String pid;
 
     @FXML
     private DatePicker pData;
 
     @FXML
-    private TextField pTowar;
+    private TextArea pTowar;
 
     @FXML
     private ChoiceBox<Status> pStatus;
@@ -124,6 +125,9 @@ public class ToolController implements Initializable {
 
     @FXML
     private Button bModify;
+
+    @FXML
+    private Button bClear;
 
 
 
@@ -157,8 +161,9 @@ public class ToolController implements Initializable {
 		copyAllButton.setOnAction(x->copyAllButton());
 		chPathFileButton.setOnAction(x->choosePath());
 		bAdd.setOnAction(x->addData());
-		bSearch.setOnAction(x->serchData());
-		//bModify.setOnAction(x->updateData());
+		bSearch.setOnAction(x->searchData());
+		bModify.setOnAction(x->updateData());
+		bClear.setOnAction(x->clearTextField());
 		pData.setValue(LocalDate.now());
 		pStatus.setValue(Status.PROCESSING);
 		JavaDB.stworzTabele(JavaDB.polacz("Orders"), "Orders");
@@ -169,29 +174,14 @@ public class ToolController implements Initializable {
 		//System.out.print(data.get(2).getId());
 		configTab();
 
-		tData.getSelectionModel().getSelectedItems().addListener(new ListChangeListener<Order>() {
-		  /*  public void changed(ObservableValue observableValue, Object oldValue, Object newValue) {
-		        //Check whether item is selected and set value of selected item to Label
-		        if(tData.getSelectionModel().getSelectedItem() != null)
-		        {
-		           TableViewSelectionModel selectionModel = tData.getSelectionModel();
-		           ObservableList selectedCells = selectionModel.getSelectedCells();
-		           TablePosition tablePosition = (TablePosition) selectedCells.get(0);
-		           Object val = tablePosition.getTableColumn().getCellData(newValue);
-		           System.out.println("Selected Value" + val);
-		         }S
-		         }*/
+		tData.getSelectionModel().getSelectedItems().addListener((ListChangeListener<Order>) c -> {
+			// TODO Auto-generated method stub
+			System.out.println("Selected Value" + tData.getSelectionModel().getSelectedItem());
+			if(tData.getSelectionModel().getSelectedItem()!=null){
+			fillTextField(tData.getSelectionModel().getSelectedItem());}
 
 
-
-			@Override
-			public void onChanged(javafx.collections.ListChangeListener.Change<? extends Order> c) {
-				// TODO Auto-generated method stub
-				System.out.println("Selected Value" + tData.getSelectionModel().getSelectedItem().getId());
-				fillTextField(tData.getSelectionModel().getSelectedItem());
-				c.reset();
-			}
-		     });
+		});
 
 
 
@@ -201,7 +191,7 @@ public class ToolController implements Initializable {
 
 
 
-	private void serchData() {
+	private void searchData() {
 		// TODO Auto-generated method stub
 		ObservableList<Order> data = JavaDB.szukaj("Orders", "id", "3");
 		tData.setItems(data);
@@ -218,6 +208,7 @@ public class ToolController implements Initializable {
 		// TODO Auto-generated method stub
 
 	}
+
 	private void fillTextField(Order p){
 		pid =p.getId();
 
@@ -230,14 +221,25 @@ public class ToolController implements Initializable {
 		pUwagi.setText(p.getUwagi());
 		pStatus.setValue(p.getStatus());
 
+	}
 
+	private void clearTextField(){
+
+		pData.setValue(LocalDate.now());
+		pTowar.clear();
+		pZamow.clear();
+		pPO.clear();
+		pOdebr.clear();
+		pMpk.clear();
+		pUwagi.clear();
+		pStatus.setValue(Status.PROCESSING);
 
 
 	}
 	private void updateData(){
 		Order ord =new Order(pid,pData.getValue(),pTowar.getText(),Integer.parseInt(pZamow.getText()),pPO.getText(),Integer.parseInt(pOdebr.getText()),Integer.parseInt(pMpk.getText()),pUwagi.getText(),pStatus.getValue());
 		JavaDB.updateDane(ord, "Orders");
-
+		searchData();
 	}
 
 
