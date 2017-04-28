@@ -7,16 +7,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
-import javafx.beans.property.Property;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
-import javafx.collections.MapChangeListener.Change;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,12 +20,9 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
-import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TableView.TableViewSelectionModel;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.stage.FileChooser;
@@ -40,7 +31,6 @@ import model.JavaDB;
 import model.Order;
 import model.PraserXML;
 import model.Status;
-import sun.util.calendar.BaseCalendar.Date;
 
 public class ToolController implements Initializable {
 	@FXML
@@ -129,6 +119,9 @@ public class ToolController implements Initializable {
     @FXML
     private Button bClear;
 
+    @FXML
+    private CheckBox cAllData;
+
 
 
 	public void initialize(URL location, ResourceBundle resources) {
@@ -193,7 +186,7 @@ public class ToolController implements Initializable {
 
 	private void searchData() {
 		// TODO Auto-generated method stub
-		ObservableList<Order> data = JavaDB.szukaj("Orders", "id", "3");
+		ObservableList<Order> data = JavaDB.szukaj("Orders", "id", cAllData.isSelected());
 		tData.setItems(data);
 	}
 

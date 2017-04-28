@@ -1,0 +1,5 @@
+package model;
+
+public enum Status {PROCESSING,PENDING,FAILED,REFUNDED,DELIVERED,COMPLETED
+
+}

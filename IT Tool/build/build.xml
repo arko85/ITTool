@@ -19,6 +19,11 @@
 	
 		<mkdir dir="externalLibs" />
 	
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\abaka\Desktop\Praser\IT Tool\IT Tool">
+				<filename name="sqlite-jdbc-3.16.1.jar"/>
+			</fileset>
+		</copy>
 	
 		<mkdir dir="project" />
 		<copy todir="project">
@@ -38,6 +43,7 @@
 		<!-- Copy project-libs references -->
 		<copy todir="build/libs">
 			<fileset dir="externalLibs">
+				<include name="sqlite-jdbc-3.16.1.jar"/>
 			</fileset>
 		</copy>
 	
@@ -111,6 +117,9 @@
 	
 	
 	
+		<fx:csstobin outdir="build/classes">
+			<fileset dir="build/classes" includes="**/*.css"/>
+		</fx:csstobin>
 	
 	</target>
 </project>

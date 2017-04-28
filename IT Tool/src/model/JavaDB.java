@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -52,7 +50,7 @@ public class JavaDB {
 	        }
 	    }
 
-    public static ObservableList<Order> szukaj(String baza, String pole, String wartosc) {
+    public static ObservableList<Order> szukaj(String baza, String pole, Boolean wartosc) {
         Connection polaczenie = null;
         Statement stat = null;
         ObservableList<Order> data = null;
@@ -62,9 +60,10 @@ public class JavaDB {
             polaczenie = DriverManager.getConnection("jdbc:sqlite:" + baza + ".db");
             stat = polaczenie.createStatement();
             // Polecenie wyszukania
-            String szukajSQL = "SELECT * FROM " + baza+";";
-                   // + " WHERE " + pole + "='" + wartosc + "';";
-
+            String szukajSQL = "SELECT * FROM " + baza;
+            		if(!wartosc){
+            			szukajSQL=szukajSQL+ " WHERE " + "STATUS !='"  +"COMPLETED"+ "'";}
+            szukajSQL=szukajSQL+";";
             ResultSet wynik = stat.executeQuery(szukajSQL);
             System.out.println("Polecenie:\n" + szukajSQL);
 
