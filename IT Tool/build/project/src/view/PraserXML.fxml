@@ -22,74 +22,6 @@
 
 <TabPane accessibleRole="CHECK_BOX" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ToolController">
   <tabs>
-    <Tab text="Praser">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="600.0">
-                     <items>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="383.0" prefWidth="175.0">
-                           <children>
-                              <VBox focusTraversable="true" prefHeight="570.0" prefWidth="175.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <Label text="Path to XML file:">
-                                       <VBox.margin>
-                                          <Insets top="10.0" />
-                                       </VBox.margin>
-                                    </Label>
-                                    <TextField editable="false" prefHeight="25.0" prefWidth="155.0" fx:id="xmlPathTextField">
-                                       <VBox.margin>
-                                          <Insets top="10.0" />
-                                       </VBox.margin>
-                                    </TextField>
-                                    <Button fx:id="chPathFileButton" mnemonicParsing="false" text="Change Pathfile">
-                                       <VBox.margin>
-                                          <Insets top="10.0" />
-                                       </VBox.margin>
-                                       <tooltip>
-                                          <Tooltip text="change path to xml file" />
-                                       </tooltip>
-                                    </Button>
-                                    <Button fx:id="genDataButton" mnemonicParsing="false" text="Generate Data">
-                                       <VBox.margin>
-                                          <Insets top="10.0" />
-                                       </VBox.margin>
-                                       <tooltip>
-                                          <Tooltip text="generate data from xml file" />
-                                       </tooltip>
-                                    </Button>
-                                    <Button fx:id="copyAllButton" mnemonicParsing="false" text="Copy All">
-                                       <VBox.margin>
-                                          <Insets top="10.0" />
-                                       </VBox.margin>
-                                       <tooltip>
-                                          <Tooltip text="copy all content from text area" />
-                                       </tooltip>
-                                    </Button>
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </padding>
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                           <children>
-                              <TextArea fx:id="dataTextArea" focusTraversable="false" prefHeight="570.0" prefWidth="417.0">
-                                 <tooltip>
-                                    <Tooltip text="Move it :)" />
-                                 </tooltip>
-                              </TextArea>
-                           </children>
-                        </AnchorPane>
-                     </items>
-                  </SplitPane>
-               </children></AnchorPane>
-      </content>
-    </Tab>
     <Tab text="Orders">
          <content>
             <VBox alignment="TOP_CENTER">
@@ -100,7 +32,7 @@
                       	<TableColumn fx:id="cData" maxWidth="120.0" minWidth="80.0" prefWidth="-1.0" text="Data" />
                         <TableColumn fx:id="cTowar" maxWidth="700.0" minWidth="450.0" prefWidth="500.0" text="Towar" />
                         <TableColumn fx:id="cZamow" maxWidth="50.0" minWidth="50.0" prefWidth="-1.0" text="Zamów." />
-                        <TableColumn fx:id="cPO" maxWidth="120.0" minWidth="120.0" prefWidth="-1.0" text="PO" />
+                        <TableColumn fx:id="cPO" maxWidth="160.0" minWidth="160.0" prefWidth="-1.0" text="PO" />
                         <TableColumn fx:id="cOdebr" maxWidth="50.0" minWidth="50.0" prefWidth="-1.0" text="Odebr." />
                         <TableColumn fx:id="cMpk" maxWidth="50.0" minWidth="80.0" prefWidth="-1.0" text="MPK" />
                         <TableColumn fx:id="cUwagi" maxWidth="400.0" minWidth="200.0" prefWidth="-1.0" text="Uwagi" />
@@ -226,6 +158,74 @@
                </children>
             </VBox>
          </content>
+    </Tab>
+    <Tab text="Praser">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="600.0">
+                     <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="383.0" prefWidth="175.0">
+                           <children>
+                              <VBox focusTraversable="true" prefHeight="570.0" prefWidth="175.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label text="Path to XML file:">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField editable="false" prefHeight="25.0" prefWidth="155.0" fx:id="xmlPathTextField">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Button fx:id="chPathFileButton" mnemonicParsing="false" text="Change Pathfile">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <tooltip>
+                                          <Tooltip text="change path to xml file" />
+                                       </tooltip>
+                                    </Button>
+                                    <Button fx:id="genDataButton" mnemonicParsing="false" text="Generate Data">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <tooltip>
+                                          <Tooltip text="generate data from xml file" />
+                                       </tooltip>
+                                    </Button>
+                                    <Button fx:id="copyAllButton" mnemonicParsing="false" text="Copy All">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <tooltip>
+                                          <Tooltip text="copy all content from text area" />
+                                       </tooltip>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TextArea fx:id="dataTextArea" focusTraversable="false" prefHeight="570.0" prefWidth="417.0">
+                                 <tooltip>
+                                    <Tooltip text="Move it :)" />
+                                 </tooltip>
+                              </TextArea>
+                           </children>
+                        </AnchorPane>
+                     </items>
+                  </SplitPane>
+               </children></AnchorPane>
+      </content>
     </Tab>
   </tabs>
 </TabPane>

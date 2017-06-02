@@ -132,8 +132,7 @@ public class ToolController implements Initializable {
 		                pZamow.textProperty(),
 		                pOdebr.textProperty(),
 		                pPO.textProperty(),
-		                pMpk.textProperty(),
-		                pUwagi.textProperty());
+		                pMpk.textProperty());
 		    }
 
 		    @Override
@@ -143,7 +142,7 @@ public class ToolController implements Initializable {
 		                || pOdebr.getText().isEmpty()
 		                || pPO.getText().isEmpty()
 		                || pMpk.getText().isEmpty()
-		                || pUwagi.getText().isEmpty());
+		                );
 		    }
 		};
 		pStatus.getItems().setAll(Status.values());
@@ -166,6 +165,7 @@ public class ToolController implements Initializable {
 		//ObservableList<Order> data = JavaDB.szukaj("Orders", "id", "3");
 		//System.out.print(data.get(2).getId());
 		configTab();
+		searchData();
 
 		tData.getSelectionModel().getSelectedItems().addListener((ListChangeListener<Order>) c -> {
 			// TODO Auto-generated method stub
@@ -175,6 +175,7 @@ public class ToolController implements Initializable {
 
 
 		});
+	tData.setStyle("-fx-focus-color: -fx-control-inner-background");;
 
 
 
@@ -199,6 +200,7 @@ public class ToolController implements Initializable {
 
 		JavaDB.dodajDane(ord, "Orders");
 		// TODO Auto-generated method stub
+		searchData();
 
 	}
 
