@@ -35,9 +35,9 @@ public class JavaDB {
 	                    + " DATA         TEXT    NOT NULL, "
 	                    + " TOWAR        TEXT     NOT NULL, "
 	                    + " ILOSCZAM             INT NOT NULL, "
-	                    + " PO              INT, "
-	                    + " ILOSCODEB    TEXT,"
-	                    + " MPK INT,"
+	                    + " PO              TEXT, "
+	                    + " ILOSCODEB    INT NOT NULL,"
+	                    + " MPK TEXT,"
 	                    + " ODBIORCA TEXT,"
 	                    + " STATUS TEXT)";
 	            // wywo³anie polecenia
@@ -83,7 +83,7 @@ public class JavaDB {
                 System.out.println("PO:        " + wynik.getString("po"));
                 row.setIloscodeb(wynik.getInt("iloscodeb"));
                 System.out.println("Ilosc odebranych:    " + wynik.getString("iloscodeb"));
-                row.setMpk(wynik.getInt("mpk"));
+                row.setMpk(wynik.getString("mpk"));
                 System.out.println("MPK:    " + wynik.getString("mpk"));
                 row.setOdbiorca(wynik.getString("odbiorca"));
                 System.out.println("Odbiorca:    " + wynik.getString("odbiorca"));
@@ -116,8 +116,8 @@ public class JavaDB {
                     + "'" + dane.getTowar() + "',"
                     + dane.getIlosczam() + ",'"
                     + dane.getpO() + "',"
-                    + dane.getIloscodeb() + ","
-                    + dane.getMpk()+",'"
+                    + dane.getIloscodeb() + ",'"
+                    + dane.getMpk()+"','"
                     +dane.getUwagi()+"','"
                     +dane.getStatus()
                     + "'  );";
@@ -148,7 +148,7 @@ public class JavaDB {
                     + "ILOSCZAM="+dane.getIlosczam() + ","
                     + "PO='" +dane.getpO() + "',"
                     + "ILOSCODEB="+dane.getIloscodeb() + ","
-                    + "MPK="+dane.getMpk()+","
+                    + "MPK='"+dane.getMpk()+"',"
                     +"ODBIORCA='"+dane.getUwagi()+"',"
                     +"STATUS='"+dane.getStatus()
                     + "' WHERE ID='"+ dane.id+"';";

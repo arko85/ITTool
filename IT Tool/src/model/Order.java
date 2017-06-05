@@ -14,14 +14,14 @@ public class Order {
 	LocalDate data;
 	String towar;
 	int ilosczam;
-	String pO;
+	String pO="PO";
 	int iloscodeb;
-	int mpk;
+	String mpk;
 	String uwagi;
 	Status status;
 
 
-	public Order(String id, LocalDate data, String towar, int ilosczam, String pO, int iloscodeb, int mpk, String odbiorca,
+	public Order(String id, LocalDate data, String towar, int ilosczam, String pO, int iloscodeb, String mpk, String odbiorca,
 			Status status) {
 
 		this.id=id;
@@ -86,11 +86,13 @@ public class Order {
 	public void setIloscodeb(int iloscodeb) {
 		this.iloscodeb = iloscodeb;
 	}
-	public int getMpk() {
+	public String getMpk() {
 		return mpk;
 	}
-	public void setMpk(int mpk) {
+	public void setMpk(String mpk) {
+
 		this.mpk = mpk;
+
 	}
 	public String getUwagi() {
 		return uwagi;

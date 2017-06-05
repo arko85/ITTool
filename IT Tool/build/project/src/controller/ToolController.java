@@ -72,7 +72,7 @@ public class ToolController implements Initializable {
     private TableColumn<Order, Integer> cOdebr;
 
     @FXML
-    private TableColumn<Order, Integer> cMpk;
+    private TableColumn<Order, String> cMpk;
 
     @FXML
     private TableColumn<Order, String> cUwagi;
@@ -130,9 +130,10 @@ public class ToolController implements Initializable {
 		    {
 		        super.bind(pTowar.textProperty(),
 		                pZamow.textProperty(),
-		                pOdebr.textProperty(),
-		                pPO.textProperty(),
-		                pMpk.textProperty());
+		                pOdebr.textProperty()
+		                //pPO.textProperty(),
+		               // pMpk.textProperty()
+		                );
 		    }
 
 		    @Override
@@ -140,8 +141,8 @@ public class ToolController implements Initializable {
 		        return (pTowar.getText().isEmpty()
 		                || pZamow.getText().isEmpty()
 		                || pOdebr.getText().isEmpty()
-		                || pPO.getText().isEmpty()
-		                || pMpk.getText().isEmpty()
+		                //|| pPO.getText().isEmpty()
+		               // || pMpk.getText().isEmpty()
 		                );
 		    }
 		};
@@ -196,7 +197,7 @@ public class ToolController implements Initializable {
 	private void addData() {
 	//System.out.println(Long.parseLong(LocalDateTime.now().format(DateTimeFormatter.ofPattern("YYMMddHmsS"))));
 
-		Order ord =new Order(LocalDateTime.now().format(DateTimeFormatter.ofPattern("YYMMddHmsS")),pData.getValue(),pTowar.getText(),Integer.parseInt(pZamow.getText()),pPO.getText(),Integer.parseInt(pOdebr.getText()),Integer.parseInt(pMpk.getText()),pUwagi.getText(),pStatus.getValue());
+		Order ord =new Order(LocalDateTime.now().format(DateTimeFormatter.ofPattern("YYMMddHmsS")),pData.getValue(),pTowar.getText(),Integer.parseInt(pZamow.getText()),pPO.getText(),Integer.parseInt(pOdebr.getText()),pMpk.getText(),pUwagi.getText(),pStatus.getValue());
 
 		JavaDB.dodajDane(ord, "Orders");
 		// TODO Auto-generated method stub
@@ -212,7 +213,7 @@ public class ToolController implements Initializable {
 		pZamow.setText(Integer.toString(p.getIlosczam()));
 		pPO.setText(p.getpO());
 		pOdebr.setText(Integer.toString(p.getIloscodeb()));
-		pMpk.setText(Integer.toString(p.getMpk()));
+		pMpk.setText(p.getMpk());
 		pUwagi.setText(p.getUwagi());
 		pStatus.setValue(p.getStatus());
 
@@ -228,11 +229,12 @@ public class ToolController implements Initializable {
 		pMpk.clear();
 		pUwagi.clear();
 		pStatus.setValue(Status.PROCESSING);
+		//if(pMpk.getText().equals("")){System.out.print("test");}
 
 
 	}
 	private void updateData(){
-		Order ord =new Order(pid,pData.getValue(),pTowar.getText(),Integer.parseInt(pZamow.getText()),pPO.getText(),Integer.parseInt(pOdebr.getText()),Integer.parseInt(pMpk.getText()),pUwagi.getText(),pStatus.getValue());
+		Order ord =new Order(pid,pData.getValue(),pTowar.getText(),Integer.parseInt(pZamow.getText()),pPO.getText(),Integer.parseInt(pOdebr.getText()),pMpk.getText(),pUwagi.getText(),pStatus.getValue());
 		JavaDB.updateDane(ord, "Orders");
 		searchData();
 	}
@@ -311,8 +313,8 @@ public class ToolController implements Initializable {
 		         return new ReadOnlyObjectWrapper<>(p.getValue().getIloscodeb());
 		     }
 		  });
-		cMpk.setCellValueFactory(new Callback<CellDataFeatures<Order, Integer>, ObservableValue<Integer>>() {
-		     public ObservableValue<Integer> call(CellDataFeatures<Order, Integer> p) {
+		cMpk.setCellValueFactory(new Callback<CellDataFeatures<Order, String>, ObservableValue<String>>() {
+		     public ObservableValue<String> call(CellDataFeatures<Order, String> p) {
 
 		         return new ReadOnlyObjectWrapper<>(p.getValue().getMpk());
 		     }
