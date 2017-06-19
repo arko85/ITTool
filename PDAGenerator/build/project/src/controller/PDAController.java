@@ -83,7 +83,7 @@ public class PDAController implements Initializable {
 		    }
 		};
 		generateButton.disableProperty().bind(bb);
-		pathTextField.setText("./");
+		pathTextField.setText("");
 
 		pathfileButton.setOnAction(x->choosePath());
 		generateButton.setOnAction(x->generateData());
@@ -135,7 +135,7 @@ public class PDAController implements Initializable {
         File selectedDirectory =
                 directoryChooser.showDialog(pathfileButton.getScene().getWindow());
 
-        pathTextField.setText(selectedDirectory.getAbsolutePath());
+        pathTextField.setText(selectedDirectory.getAbsolutePath()+"/");
 
 
 	}

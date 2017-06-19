@@ -82,7 +82,7 @@ public class PDA {
     public void writeTOFile(String patch){
 
     	try {
-			PrintWriter fw =new PrintWriter(new File(patch+"/PDA.txt"));
+			PrintWriter fw =new PrintWriter(new File(patch+"PDA.txt"));
 			fw.println(zm1);
 			fw.println(zm2);
 			fw.println(zm3);
