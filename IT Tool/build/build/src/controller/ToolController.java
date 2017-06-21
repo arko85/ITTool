@@ -147,7 +147,7 @@ public class ToolController implements Initializable {
 		    }
 		};
 		pStatus.getItems().setAll(Status.values());
-		//pStatus.set
+
 		xmlPathTextField.setText("./Potwierdzenie.xml");
 		bAdd.disableProperty().bind(bb);
 		genDataButton.setOnAction(x->genDataButton());
