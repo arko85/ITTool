@@ -30,6 +30,7 @@ import javafx.util.Callback;
 import model.JavaDB;
 import model.Order;
 import model.PraserXML;
+import model.SQLQueryPraser;
 import model.Status;
 
 public class ToolController implements Initializable {
@@ -234,9 +235,10 @@ public class ToolController implements Initializable {
 
 	}
 	private void updateData(){
-		Order ord =new Order(pid,pData.getValue(),pTowar.getText(),Integer.parseInt(pZamow.getText()),pPO.getText(),Integer.parseInt(pOdebr.getText()),pMpk.getText(),pUwagi.getText(),pStatus.getValue());
-		JavaDB.updateDane(ord, "Orders");
-		searchData();
+		//Order ord =new Order(pid,pData.getValue(),pTowar.getText(),Integer.parseInt(pZamow.getText()),pPO.getText(),Integer.parseInt(pOdebr.getText()),pMpk.getText(),pUwagi.getText(),pStatus.getValue());
+		//JavaDB.updateDane(ord, "Orders");
+		//searchData();
+		System.out.print(new SQLQueryPraser().genQuery(pTowar.getText(),pZamow.getText(),pPO.getText(),pOdebr.getText(),pMpk.getText(),pUwagi.getText()));
 	}
 
 
