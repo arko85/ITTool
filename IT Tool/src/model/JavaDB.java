@@ -50,7 +50,7 @@ public class JavaDB {
 	        }
 	    }
 
-    public static ObservableList<Order> szukaj(String baza, String pole, Boolean wartosc) {
+    public static ObservableList<Order> szukaj(String baza, String pole) {
         Connection polaczenie = null;
         Statement stat = null;
         ObservableList<Order> data = null;
@@ -61,11 +61,13 @@ public class JavaDB {
             stat = polaczenie.createStatement();
             // Polecenie wyszukania
             String szukajSQL = "SELECT * FROM " + baza;
-            		if(!wartosc){
-            			szukajSQL=szukajSQL+ " WHERE " + "STATUS !='"  +"COMPLETED"+ "'";}
-            szukajSQL=szukajSQL+";";
-            ResultSet wynik = stat.executeQuery(szukajSQL);
+
+
+            			szukajSQL=szukajSQL+pole;
+            szukajSQL=szukajSQL+" ;";
             System.out.println("Polecenie:\n" + szukajSQL);
+            ResultSet wynik = stat.executeQuery(szukajSQL);
+
 
             while (wynik.next()) {
 

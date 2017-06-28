@@ -189,7 +189,7 @@ public class ToolController implements Initializable {
 
 	private void searchData() {
 		// TODO Auto-generated method stub
-		ObservableList<Order> data = JavaDB.szukaj("Orders", "id", cAllData.isSelected());
+		ObservableList<Order> data = JavaDB.szukaj("Orders", new SQLQueryPraser().genQuery(pTowar.getText(),pZamow.getText(),pPO.getText(),pOdebr.getText(),pMpk.getText(),pUwagi.getText(),cAllData.isSelected()));
 		tData.setItems(data);
 	}
 
@@ -235,11 +235,10 @@ public class ToolController implements Initializable {
 
 	}
 	private void updateData(){
-		//Order ord =new Order(pid,pData.getValue(),pTowar.getText(),Integer.parseInt(pZamow.getText()),pPO.getText(),Integer.parseInt(pOdebr.getText()),pMpk.getText(),pUwagi.getText(),pStatus.getValue());
-		//JavaDB.updateDane(ord, "Orders");
-		//searchData();
-		System.out.print(new SQLQueryPraser().genQuery(pTowar.getText(),pZamow.getText(),pPO.getText(),pOdebr.getText(),pMpk.getText(),pUwagi.getText()));
-	}
+		Order ord =new Order(pid,pData.getValue(),pTowar.getText(),Integer.parseInt(pZamow.getText()),pPO.getText(),Integer.parseInt(pOdebr.getText()),pMpk.getText(),pUwagi.getText(),pStatus.getValue());
+		JavaDB.updateDane(ord, "Orders");
+		searchData();
+			}
 
 
 	private void choosePath() {
