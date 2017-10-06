@@ -89,6 +89,7 @@ public class PDA {
 			fw.println(zm4);
 			fw.println(zm5);
 			fw.println(zm6);
+			fw.println("======================");
 			fw.println("Average = "+average);
 			fw.println("Amount PDA = "+pda);
 			fw.flush();

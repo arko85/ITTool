@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -23,7 +24,7 @@
       <Label layoutX="10.0" layoutY="279.0" text="Area m2" />
       <Label layoutX="10.0" layoutY="320.0" text="Average" />
       <Label layoutX="26.0" layoutY="79.0" text="2" />
-      <Button fx:id="pathfileButton" layoutX="524.0" layoutY="35.0" mnemonicParsing="false" text="Patchfile" />
+      <Button fx:id="pathfileButton" layoutX="524.0" layoutY="35.0" mnemonicParsing="false" text="Directory" />
       <TextField fx:id="pathTextField" layoutX="358.0" layoutY="35.0" />
       <Label fx:id="numberPDALabel" alignment="CENTER" contentDisplay="CENTER" layoutX="358.0" layoutY="118.0" text="blank" textAlignment="CENTER">
          <font>
@@ -34,6 +35,9 @@
          <font>
             <Font size="18.0" />
          </font>
+         <tooltip>
+            <Tooltip text="Generate data &amp; save PDA.txt to directory" />
+         </tooltip>
       </Button>
       <Label fx:id="averageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="315.0" prefHeight="25.0" prefWidth="64.0" text="blank" textAlignment="CENTER">
          <font>
