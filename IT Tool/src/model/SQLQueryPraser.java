@@ -12,7 +12,7 @@ public String genQuery(  String towar, String ilosczam, String pO, String ilosco
 
 			if(!towar.isEmpty())query.append(" towar='"+towar+"' AND");
 			if(!ilosczam.isEmpty())query.append(" ilosczam='"+ilosczam+"' AND");
-			if(!pO.isEmpty())query.append(" pO='"+pO+"' AND");
+			if(!pO.isEmpty())query.append(" pO LIKE'"+pO+"' AND");
 			if(!iloscodeb.isEmpty())query.append(" ILOSCODEB="+ Integer.parseInt(iloscodeb)+" AND");
 			if(!mpk.isEmpty())query.append(" mpk='"+mpk+"' AND");
 			if(!odbiorca.isEmpty())query.append(" odbiorca='"+odbiorca+"' AND");
