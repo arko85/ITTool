@@ -16,7 +16,7 @@ public class Main extends Application {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//launch(args);
+		launch(args);
 
 
 		System.out.print(new PO_Position("IT", "Monitor", 1, 590, 590, "", "00823", "CI473","0104" ,"", 0,"30030.004","C").toString());
@@ -38,13 +38,13 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-		// TODO Auto-generated method stub
-	//	Parent parent = (Parent) FXMLLoader.load(getClass().getResource(
-      //          "/view/PraserXML.fxml"));
-     //   Scene scene = new Scene(parent);
-     //   stage.setScene(scene);
-     //   stage.setTitle("Praser XML for MarkIT");
-      //  stage.show();
+		 //TODO Auto-generated method stub
+		Parent parent = (Parent) FXMLLoader.load(getClass().getResource(
+                "/view/PO_Gen.fxml"));
+        Scene scene = new Scene(parent);
+       stage.setScene(scene);
+        stage.setTitle("PO Generator");
+        stage.show();
 	}
 
 }

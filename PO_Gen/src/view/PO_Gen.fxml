@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane accessibleRole="CHECK_BOX" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PO_GenController">
+  <tabs>
+    <Tab text="Orders">
+         <content>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <TableView fx:id="tData" editable="true" tableMenuButtonVisible="true" VBox.vgrow="SOMETIMES">
+                    <columns>
+                        <TableColumn fx:id="cId" maxWidth="120.0" minWidth="100.0" prefWidth="-1.0" text="ID" />
+                        <TableColumn fx:id="cTowar" maxWidth="700.0" minWidth="450.0" prefWidth="500.0" text="Towar - opis" />
+                        <TableColumn fx:id="cPO" maxWidth="160.0" minWidth="160.0" prefWidth="-1.0" text="Cena netto" />
+                        <TableColumn fx:id="cUwagi" maxWidth="400.0" minWidth="200.0" prefWidth="-1.0" text="Uwagi" />
+                        <TableColumn fx:id="cStatus" maxWidth="120.0" minWidth="100.0" prefWidth="-1.0" text="//" />
+
+
+
+                                      </columns>
+                  </TableView>
+                  <GridPane accessibleRole="NODE" minHeight="110.0" prefHeight="110.0" prefWidth="600.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="404.0" minWidth="10.0" prefWidth="342.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="358.0" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="ID">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Towar" GridPane.columnIndex="4" GridPane.rowSpan="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="CAPEX/OPEX" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Cena netto" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Ilość" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="NR projektu" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Dział" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="MPK" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <ChoiceBox fx:id="pMpk" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <TextField fx:id="pDzial" prefHeight="52.0" prefWidth="357.0" promptText="&gt;&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="pNrProject" promptText="0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="pIlosc" promptText="0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="pNetto" promptText="PO" GridPane.columnIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="pType" promptText="0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Button fx:id="bSearch" mnemonicParsing="false" text="Search" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Button fx:id="bAdd" mnemonicParsing="false" text="Add" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Button fx:id="bClear" mnemonicParsing="false" text="Clear" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Button fx:id="bModify" layoutX="1167.0" layoutY="48.0" mnemonicParsing="false" text="Modify" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <TextArea fx:id="pTowar" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="5" GridPane.rowSpan="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </TextArea>
+                        <CheckBox fx:id="cAllData" mnemonicParsing="false" text="COMPLETED" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Label text="Linia Budżetowa" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label layoutX="43.0" layoutY="98.0" text="Konto księgowe" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="pBudgetLine" layoutX="139.0" layoutY="66.0" promptText="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="pAccountigProject" layoutX="10.0" layoutY="11.0" promptText="0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Button fx:id="bAddPosition" layoutX="1201.0" layoutY="66.0" mnemonicParsing="false" text="Dodaj pozycje" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Button>
+                        <TextField fx:id="pId" layoutX="139.0" layoutY="38.0" prefHeight="52.0" prefWidth="357.0" promptText="&gt;&gt;" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label layoutX="740.0" layoutY="70.0" text="Uwagi" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="pUwagi" layoutX="457.0" layoutY="94.0" promptText="0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </GridPane>
+                  <TableView fx:id="tData1" editable="true" layoutX="10.0" layoutY="10.0" tableMenuButtonVisible="true">
+                     <columns>
+                        <TableColumn fx:id="cId1" maxWidth="120.0" minWidth="100.0" prefWidth="-1.0" text="ID" />
+                        <TableColumn fx:id="cData1" maxWidth="120.0" minWidth="80.0" prefWidth="-1.0" text="Dział" />
+                        <TableColumn fx:id="cTowar1" maxWidth="700.0" minWidth="450.0" prefWidth="500.0" text="Towar - opis" />
+                        <TableColumn fx:id="cZamow1" maxWidth="50.0" minWidth="50.0" prefWidth="-1.0" text="Ilość" />
+                        <TableColumn fx:id="cPO1" maxWidth="100.0" minWidth="100.0" prefWidth="-1.0" text="Cena netto" />
+                        <TableColumn fx:id="cOdebr1" maxWidth="100.0" minWidth="100.0" prefWidth="-1.0" text="Suma netto" />
+                        <TableColumn fx:id="cMpk1" maxWidth="100.0" minWidth="100.0" prefWidth="-1.0" text="Linia budżetowa" />
+                        <TableColumn fx:id="cUwagi1" maxWidth="100.0" minWidth="100.0" prefWidth="-1.0" text="NR projektu" />
+                        <TableColumn fx:id="cStatus1" maxWidth="120.0" minWidth="100.0" prefWidth="-1.0" text="MPK" />
+                        <TableColumn fx:id="cStatus11" maxWidth="120.0" minWidth="100.0" prefWidth="-1.0" text="Konto księgowe" />
+                        <TableColumn fx:id="cStatus111" maxWidth="120.0" minWidth="100.0" prefWidth="-1.0" text="CAPEX/OPEX" />
+                     </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </content>
+    </Tab>
+    <Tab text="Praser">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="600.0">
+                     <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="383.0" prefWidth="175.0">
+                           <children>
+                              <VBox focusTraversable="true" prefHeight="570.0" prefWidth="175.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label text="Path to XML file:">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField editable="false" prefHeight="25.0" prefWidth="155.0" fx:id="xmlPathTextField">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Button fx:id="chPathFileButton" mnemonicParsing="false" text="Change Pathfile">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <tooltip>
+                                          <Tooltip text="change path to xml file" />
+                                       </tooltip>
+                                    </Button>
+                                    <Button fx:id="genDataButton" mnemonicParsing="false" text="Generate Data">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <tooltip>
+                                          <Tooltip text="generate data from xml file" />
+                                       </tooltip>
+                                    </Button>
+                                    <Button fx:id="copyAllButton" mnemonicParsing="false" text="Copy All">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <tooltip>
+                                          <Tooltip text="copy all content from text area" />
+                                       </tooltip>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TextArea fx:id="dataTextArea" focusTraversable="false" prefHeight="570.0" prefWidth="417.0">
+                                 <tooltip>
+                                    <Tooltip text="Move it :)" />
+                                 </tooltip>
+                              </TextArea>
+                           </children>
+                        </AnchorPane>
+                     </items>
+                  </SplitPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
